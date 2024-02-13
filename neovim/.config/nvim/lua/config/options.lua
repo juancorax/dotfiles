@@ -13,7 +13,7 @@ opt.hlsearch = false
 opt.ignorecase = true
 opt.incsearch = true
 opt.list = true
-opt.listchars = { eol = "↵", space = "·" }
+opt.listchars = { eol = "↵" }
 opt.mouse = ""
 opt.number = true
 opt.relativenumber = true
