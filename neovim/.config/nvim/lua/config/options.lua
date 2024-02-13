@@ -1,0 +1,33 @@
+local g = vim.g
+local opt = vim.opt
+
+g.mapleader = " "
+g.maplocalleader = " "
+opt.autoindent = true
+opt.background = "dark"
+opt.clipboard = "unnamedplus"
+opt.cmdheight = 1
+opt.cursorline = true
+opt.expandtab = true
+opt.hlsearch = false
+opt.ignorecase = true
+opt.incsearch = true
+opt.list = true
+opt.listchars = { eol = "↵", space = "·" }
+opt.mouse = ""
+opt.number = true
+opt.relativenumber = true
+opt.scrolloff = 10
+opt.shiftwidth = 2
+opt.sidescrolloff = 20
+opt.signcolumn = "yes"
+opt.smartcase = true
+opt.softtabstop = 2
+opt.splitbelow = true
+opt.splitright = true
+opt.swapfile = false
+opt.tabstop = 2
+opt.termguicolors = true
+opt.undofile = true
+opt.updatetime = 1000
+opt.wrap = false
