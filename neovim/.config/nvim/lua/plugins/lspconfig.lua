@@ -37,9 +37,6 @@ return {
       opts.desc = "show lsp references"
       keymap("n", "gr", "<Cmd>Telescope lsp_references<CR>", opts)
 
-      opts.desc = "show buffer diagnostics"
-      keymap("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-
       opts.desc = "show line diagnostics"
       keymap("n", "<leader>d", vim.diagnostic.open_float, opts)
 
