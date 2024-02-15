@@ -26,6 +26,7 @@ set recolor true
 set recolor-darkcolor "#c5c9c5"
 set recolor-lightcolor "#181616"
 set sandbox "none"
+set selection-clipboard "clipboard"
 set statusbar-bg "#181616"
 set statusbar-fg "#c5c9c5"
 set statusbar-h-padding 0
