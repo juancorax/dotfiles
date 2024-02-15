@@ -10,9 +10,11 @@ return {
     null_ls.setup({
       sources = {
         formatting.stylua,
-      }
+      },
     })
 
-    keymap("n", "<leader>gf", vim.lsp.buf.format, {})
+    keymap("n", "<leader>F", function()
+      vim.lsp.buf.format({ async = true })
+    end, { desc = "format buffer" })
   end,
 }
