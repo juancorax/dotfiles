@@ -24,6 +24,7 @@ return {
 
     mason_null_ls.setup({
       ensure_installed = {
+        "prettierd",
         "stylua",
       },
       automatic_installation = true,
