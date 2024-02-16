@@ -5,17 +5,30 @@ return {
     local null_ls = require("null-ls")
     local formatting = null_ls.builtins.formatting
     local diagnostics = null_ls.builtins.diagnostics
-    local keymap = vim.keymap.set
+    local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
     null_ls.setup({
       sources = {
         formatting.prettierd,
         formatting.stylua,
       },
+      on_attach = function(current_client, bufnr)
+        if current_client.supports_method("textDocument/formatting") then
+          vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format({
+                filter = function(client)
+                  return client.name == "null-ls"
+                end,
+                bufnr = bufnr,
+              })
+            end,
+          })
+        end
+      end,
     })
-
-    keymap("n", "<leader>F", function()
-      vim.lsp.buf.format({ async = true })
-    end, { desc = "format buffer" })
   end,
 }
