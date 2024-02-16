@@ -3,6 +3,11 @@ local opt = vim.opt
 
 g.mapleader = " "
 g.maplocalleader = " "
+g.netrw_banner = 0
+g.netrw_bufsettings = "noma nomod nonu nobl nowrap ro rnu"
+g.netrw_hide = 0
+g.netrw_liststyle = 3
+g.netrw_sizestyle = "H"
 opt.autoindent = true
 opt.background = "dark"
 opt.clipboard = "unnamedplus"
