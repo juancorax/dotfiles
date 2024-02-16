@@ -13,7 +13,11 @@ return {
 
     mason_lspconfig.setup({
       ensure_installed = {
+        "cssls",
+        "emmet_ls",
+        "html",
         "lua_ls",
+        "tsserver",
       },
       automatic_installation = true,
     })

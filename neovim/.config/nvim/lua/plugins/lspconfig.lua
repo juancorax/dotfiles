@@ -49,6 +49,21 @@ return {
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
+    lspconfig.cssls.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig.emmet_ls.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    lspconfig.html.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     lspconfig.lua_ls.setup({
       capabilities = capabilities,
       on_attach = on_attach,
@@ -65,6 +80,11 @@ return {
           },
         },
       },
+    })
+
+    lspconfig.tsserver.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
     })
   end,
 }
