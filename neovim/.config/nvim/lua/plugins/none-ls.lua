@@ -10,6 +10,7 @@ return {
     null_ls.setup({
       sources = {
         formatting.prettierd,
+        formatting.rubocop,
         formatting.stylua,
       },
       on_attach = function(current_client, bufnr)

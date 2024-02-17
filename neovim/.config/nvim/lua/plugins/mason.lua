@@ -17,6 +17,7 @@ return {
         "emmet_ls",
         "html",
         "lua_ls",
+        "solargraph",
         "tsserver",
       },
       automatic_installation = true,
@@ -25,6 +26,7 @@ return {
     mason_null_ls.setup({
       ensure_installed = {
         "prettierd",
+        "rubocop",
         "stylua",
       },
       automatic_installation = true,

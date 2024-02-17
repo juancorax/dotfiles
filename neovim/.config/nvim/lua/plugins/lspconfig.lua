@@ -82,6 +82,16 @@ return {
       },
     })
 
+    lspconfig.solargraph.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {
+        solargraph = {
+          formatting = false,
+        },
+      },
+    })
+
     lspconfig.tsserver.setup({
       capabilities = capabilities,
       on_attach = on_attach,
