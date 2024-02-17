@@ -12,6 +12,11 @@ return {
         formatting.prettierd,
         formatting.rubocop,
         formatting.stylua,
+        diagnostics.eslint_d.with({
+          condition = function(utils)
+            return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" })
+          end,
+        }),
       },
       on_attach = function(current_client, bufnr)
         if current_client.supports_method("textDocument/formatting") then

@@ -25,6 +25,7 @@ return {
 
     mason_null_ls.setup({
       ensure_installed = {
+        "eslint_d",
         "prettierd",
         "rubocop",
         "stylua",
