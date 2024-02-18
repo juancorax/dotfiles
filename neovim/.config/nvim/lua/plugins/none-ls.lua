@@ -20,6 +20,7 @@ return {
           end,
         }),
         diagnostics.pylint,
+        diagnostics.rubocop,
       },
       on_attach = function(current_client, bufnr)
         if current_client.supports_method("textDocument/formatting") then

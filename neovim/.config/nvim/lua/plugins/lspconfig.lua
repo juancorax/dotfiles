@@ -93,6 +93,7 @@ return {
       settings = {
         solargraph = {
           formatting = false,
+          diagnostics = false,
         },
       },
     })
