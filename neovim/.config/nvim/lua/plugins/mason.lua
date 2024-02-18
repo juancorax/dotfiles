@@ -17,6 +17,7 @@ return {
         "emmet_ls",
         "html",
         "lua_ls",
+        "pyright",
         "solargraph",
         "tsserver",
       },
@@ -25,8 +26,11 @@ return {
 
     mason_null_ls.setup({
       ensure_installed = {
+        "black",
         "eslint_d",
+        "isort",
         "prettierd",
+        "pylint",
         "rubocop",
         "stylua",
       },

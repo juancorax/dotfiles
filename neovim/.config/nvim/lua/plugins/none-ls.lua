@@ -9,6 +9,8 @@ return {
 
     null_ls.setup({
       sources = {
+        formatting.black,
+        formatting.isort,
         formatting.prettierd,
         formatting.rubocop,
         formatting.stylua,
@@ -17,6 +19,7 @@ return {
             return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" })
           end,
         }),
+        diagnostics.pylint,
       },
       on_attach = function(current_client, bufnr)
         if current_client.supports_method("textDocument/formatting") then
