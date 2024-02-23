@@ -12,13 +12,13 @@ return {
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
-    luasnip.filetype_extend("ruby", {"rails"})
+    luasnip.filetype_extend("ruby", { "rails" })
 
     require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
       completion = {
-        completeopt = "menu,menuone,preview,noselect",
+        completeopt = "menu,menuone,noinsert",
       },
       snippet = {
         expand = function(args)
@@ -32,7 +32,7 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ["<C-y>"] = cmp.mapping.confirm({ select = true }),
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
