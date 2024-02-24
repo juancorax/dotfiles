@@ -24,6 +24,7 @@ opt.number = true
 opt.relativenumber = true
 opt.scrolloff = 10
 opt.shiftwidth = 2
+opt.showmode = false
 opt.sidescrolloff = 20
 opt.signcolumn = "yes"
 opt.smartcase = true
