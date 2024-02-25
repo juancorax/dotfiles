@@ -2,12 +2,12 @@ return {
   "williamboman/mason.nvim",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
-    "jay-babu/mason-null-ls.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
-    local mason_null_ls = require("mason-null-ls")
+    local mason_tool_installer = require("mason-tool-installer")
 
     mason.setup()
 
@@ -24,7 +24,7 @@ return {
       automatic_installation = true,
     })
 
-    mason_null_ls.setup({
+    mason_tool_installer.setup({
       ensure_installed = {
         "black",
         "eslint_d",
@@ -34,7 +34,6 @@ return {
         "rubocop",
         "stylua",
       },
-      automatic_installation = true,
     })
   end,
 }
