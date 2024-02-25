@@ -9,6 +9,13 @@ return {
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
+    local keymap = vim.keymap.set
+    local builtin = require("telescope.builtin")
+    local function live_grep_open_files()
+      builtin.live_grep({
+        grep_open_files = true,
+      })
+    end
 
     telescope.setup({
       defaults = {
@@ -24,13 +31,13 @@ return {
     })
     telescope.load_extension("fzf")
 
-    local keymap = vim.keymap.set
-    local builtin = require("telescope.builtin")
-    local function live_grep_open_files()
-      builtin.live_grep({
-        grep_open_files = true,
-      })
-    end
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "TelescopePreviewerLoaded",
+      callback = function()
+        vim.wo.wrap = true
+      end,
+    })
+
     keymap("n", "<leader>ff", builtin.find_files, { desc = "lists files in your current working directory" })
     keymap("n", "<leader>fg", builtin.live_grep, { desc = "search for a string in your current working directory" })
     keymap("n", "<leader>fb", builtin.buffers, { desc = "lists open buffers" })
