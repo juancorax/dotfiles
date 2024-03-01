@@ -10,6 +10,7 @@ return {
         html = { "prettierd" },
         javascript = { "prettierd" },
         javascriptreact = { "prettierd" },
+        json = { "prettierd" },
         lua = { "stylua" },
         python = { "isort", "black" },
         ruby = { "rubocop" },
