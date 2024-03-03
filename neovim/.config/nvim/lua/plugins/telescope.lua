@@ -21,12 +21,6 @@ return {
       defaults = {
         path_display = { "truncate" },
         borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-        mappings = {
-          i = {
-            ["<C-k>"] = actions.move_selection_previous,
-            ["<C-j>"] = actions.move_selection_next,
-          },
-        },
       },
     })
     telescope.load_extension("fzf")
