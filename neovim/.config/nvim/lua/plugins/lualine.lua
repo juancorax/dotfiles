@@ -1,7 +1,7 @@
 return {
   "nvim-lualine/lualine.nvim",
   config = function()
-    require("lualine").setup ({
+    require("lualine").setup({
       options = {
         icons_enabled = false,
         theme = "kanagawa",
@@ -11,7 +11,7 @@ return {
       sections = {
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = { "location" },
       },
     })
   end,
