@@ -9,7 +9,6 @@ keymap("n", "<C-d>", "<C-d>zz", { desc = "scroll down and center the cursor line
 keymap("n", "<C-u>", "<C-u>zz", { desc = "scroll up and center the cursor line" })
 keymap("n", "<leader>+", "<C-a>", { desc = "increment number" })
 keymap("n", "<leader>-", "<C-x>", { desc = "decrement number" })
-keymap("n", "<leader>fe", "<Cmd>Explore<CR>", { desc = "open the file explorer" })
 keymap("n", "<leader>sc", "<Cmd>close<CR>", { desc = "close current split" })
 keymap("n", "<leader>se", "<C-w>=", { desc = "make splits equal size" })
 keymap("n", "<leader>sh", "<C-w>s", { desc = "split window horizontally" })
