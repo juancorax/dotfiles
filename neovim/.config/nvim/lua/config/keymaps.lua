@@ -19,7 +19,7 @@ keymap("n", "n", "nzzzv", { desc = "move to the next search result and center th
 keymap("v", "<", "<gv", { desc = "indent out the selected lines" })
 keymap("v", "<leader>+", "g<C-a>", { desc = "increment number" })
 keymap("v", "<leader>-", "g<C-x>", { desc = "decrement number" })
+keymap("v", "<leader>p", '"_dp', { desc = "paste over currently selected text without yanking it" })
 keymap("v", ">", ">gv", { desc = "indent in the selected lines" })
 keymap("v", "J", ":m '>+1<CR>gv=gv", { desc = "move down the selected lines" })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { desc = "move up the selected lines" })
-keymap("v", "p", '"_dp', { desc = "paste over currently selected text without yanking it" })
