@@ -268,8 +268,8 @@ awful.keyboard.append_global_keybindings({
     awful.screen.focused().mypromptbox:run()
   end, { description = "run prompt", group = "launcher" }),
   awful.key({ modkey }, "p", function()
-    menubar.show()
-  end, { description = "show the menubar", group = "launcher" }),
+    awful.spawn("rofi -show drun")
+  end, { description = "show rofi", group = "launcher" }),
 })
 
 -- Tags related keybindings
