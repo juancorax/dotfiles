@@ -18,7 +18,7 @@ alias grep='grep --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-alias cat='bat --theme=OneHalfDark'
+alias cat='bat --theme=kanagawa'
 alias vi='nvim'
 alias vim='nvim'
 
