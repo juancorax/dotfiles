@@ -1,0 +1,42 @@
+{
+  "logo": {
+    "type": "kitty-direct",
+    "source": "~/.config/fastfetch/logo.png",
+    "width": 18,
+    "height": 8
+  },
+  "modules": [
+    {
+      "type": "os",
+      "keyColor": "blue"
+    },
+    {
+      "type": "kernel",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "shell",
+      "keyColor": "blue"
+    },
+    {
+      "type": "wm",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "terminal",
+      "keyColor": "blue"
+    },
+    {
+      "type": "cpu",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "gpu",
+      "keyColor": "blue"
+    },
+    {
+      "type": "memory",
+      "keyColor": "magenta"
+    },
+  ]
+}
