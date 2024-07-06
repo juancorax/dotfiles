@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# system information
+clear && fastfetch
+
 # zap
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
