@@ -1,9 +1,6 @@
 {
   "logo": {
-    "type": "kitty-direct",
-    "source": "~/.config/fastfetch/logo.png",
-    "width": 18,
-    "height": 8
+    "type": "none"
   },
   "modules": [
     {
@@ -12,7 +9,7 @@
     },
     {
       "type": "kernel",
-      "keyColor": "magenta"
+      "keyColor": "blue"
     },
     {
       "type": "shell",
@@ -20,7 +17,7 @@
     },
     {
       "type": "wm",
-      "keyColor": "magenta"
+      "keyColor": "blue"
     },
     {
       "type": "terminal",
@@ -28,7 +25,7 @@
     },
     {
       "type": "cpu",
-      "keyColor": "magenta"
+      "keyColor": "blue"
     },
     {
       "type": "gpu",
@@ -36,7 +33,7 @@
     },
     {
       "type": "memory",
-      "keyColor": "magenta"
+      "keyColor": "blue"
     },
   ]
 }
