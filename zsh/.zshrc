@@ -41,6 +41,11 @@ eval "$(pyenv init - zsh)"
 eval "$(rbenv init - zsh)"
 
 # fzf config
+export FZF_DEFAULT_OPTS="
+  --layout='reverse' --prompt='  ' --pointer=' ' --marker='>' --separator='' --scrollbar=''
+  --color=fg:#c5c9c5,bg:#181616,hl:#2D4F67,fg+:#ffffff,bg+:#0d0c0c
+  --color=gutter:#181616,hl+:#7FB4CA,info:#a6a69c,marker:#7FB4CA,spinner:#a6a69c
+"
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude '.git'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d --hidden --strip-cwd-prefix --exclude '.git'"
