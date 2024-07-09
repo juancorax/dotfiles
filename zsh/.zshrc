@@ -40,5 +40,18 @@ eval "$(fnm env --shell zsh)"
 eval "$(pyenv init - zsh)"
 eval "$(rbenv init - zsh)"
 
+# fzf config
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude '.git'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d --hidden --strip-cwd-prefix --exclude '.git'"
+
+_fzf_compgen_path() {
+  fd --hidden --exclude ".git" . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type d --hidden --exclude ".git" . "$1"
+}
+
 # prompt
 PS1=$'\n%F{#0087ff}%~%f\n%F{#00ffff}$%f '
