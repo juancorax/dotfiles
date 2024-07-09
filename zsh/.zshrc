@@ -34,7 +34,8 @@ plug "zsh-users/zsh-syntax-highlighting"
 bindkey '^ ' autosuggest-accept
 
 # path
-export PATH="$HOME/.local/bin:$HOME/.local/share/fnm:$HOME/.pyenv/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.fzf/bin:$HOME/.local/bin:$HOME/.local/share/fnm:$HOME/.pyenv/bin:$HOME/.rbenv/bin:$PATH"
+source <(fzf --zsh)
 eval "$(fnm env --shell zsh)"
 eval "$(pyenv init - zsh)"
 eval "$(rbenv init - zsh)"
