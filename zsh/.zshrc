@@ -7,9 +7,15 @@ clear && fastfetch
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 # history
-HISTSIZE=100
-SAVEHIST=100
-HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=1000
+export SAVEHIST=500
+export HISTFILE="$HOME/.zsh_history"
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_save_no_dups
+setopt inc_append_history
+setopt share_history
 
 # default apps
 export EDITOR="nvim"
