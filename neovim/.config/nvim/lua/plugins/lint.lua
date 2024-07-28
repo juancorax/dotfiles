@@ -8,7 +8,6 @@ return {
       javascript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       python = { "pylint" },
-      ruby = { "rubocop" },
       typescript = { "eslint_d" },
       typescriptreact = { "eslint_d" },
     }

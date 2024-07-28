@@ -13,7 +13,6 @@ return {
         json = { "prettierd" },
         lua = { "stylua" },
         python = { "isort", "black" },
-        ruby = { "rubocop" },
         typescript = { "prettierd" },
         typescriptreact = { "prettierd" },
       },
