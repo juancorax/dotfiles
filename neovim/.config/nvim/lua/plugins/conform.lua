@@ -12,9 +12,11 @@ return {
         javascriptreact = { "prettierd" },
         json = { "prettierd" },
         lua = { "stylua" },
+        markdown = { "prettierd" },
         python = { "isort", "black" },
         typescript = { "prettierd" },
         typescriptreact = { "prettierd" },
+        yaml = { "prettierd" },
       },
       format_on_save = {
         lsp_fallback = true,
