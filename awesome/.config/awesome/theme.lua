@@ -31,6 +31,8 @@ theme.border_color_normal = "#181616"
 theme.border_color_active = "#0d0c0c"
 theme.border_color_marked = "#E46876"
 
+theme.tasklist_disable_task_name = true
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
