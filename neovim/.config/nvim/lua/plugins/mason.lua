@@ -13,6 +13,7 @@ return {
 
     mason_lspconfig.setup({
       ensure_installed = {
+        "bashls",
         "cssls",
         "emmet_ls",
         "html",
@@ -31,6 +32,8 @@ return {
         "prettierd",
         "pylint",
         "rubocop",
+        "shellcheck",
+        "shfmt",
         "stylua",
       },
     })
