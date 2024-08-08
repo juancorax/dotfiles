@@ -265,11 +265,11 @@ awful.keyboard.append_global_keybindings({
     awful.spawn(terminal)
   end, { description = "open a terminal", group = "launcher" }),
   awful.key({ modkey }, "r", function()
-    awful.screen.focused().mypromptbox:run()
-  end, { description = "run prompt", group = "launcher" }),
+    awful.spawn("rofi -show run")
+  end, { description = "show rofi in run mode", group = "launcher" }),
   awful.key({ modkey }, "p", function()
     awful.spawn("rofi -show drun")
-  end, { description = "show rofi", group = "launcher" }),
+  end, { description = "show rofi in drun mode", group = "launcher" }),
 })
 
 -- Tags related keybindings
