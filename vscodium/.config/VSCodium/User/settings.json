@@ -1,0 +1,149 @@
+{
+  "[json][jsonc][markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "breadcrumbs.enabled": false,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.cursorSurroundingLines": 8,
+  "editor.fontFamily": "ComicCodeLigatures Nerd Font, Noto Sans CJK JP",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": false,
+  "editor.guides.bracketPairsHorizontal": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.matchBrackets": "never",
+  "editor.minimap.enabled": false,
+  "editor.occurrencesHighlight": "off",
+  "editor.overviewRulerBorder": false,
+  "editor.renderLineHighlight": "line",
+  "editor.renderWhitespace": "none",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.selectionHighlight": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.tabSize": 4,
+  "editor.wordWrap": "off",
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "git.openRepositoryInParentFolders": "always",
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.cwd": "${fileDirname}",
+  "terminal.integrated.fontFamily": "ComicCodeLigatures Nerd Font, Noto Sans CJK JP",
+  "update.mode": "none",
+  "update.showReleaseNotes": false,
+  "vim.hlsearch": true,
+  "vim.incsearch": false,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["leader", "s", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s", "h"], "commands": [":split"] },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["J"],
+      "after": ["m", "z", "J", "`", "z"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z"]
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z"]
+    },
+    {
+      "before": ["leader", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["leader", "f", "b"],
+      "commands": ["workbench.action.showAllEditors"]
+    },
+    {
+      "before": ["leader", "f", "d"],
+      "commands": ["workbench.actions.view.toggleProblems"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"],
+      "after": ["z", "z"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"],
+      "after": ["z", "z"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"]
+    },
+    { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    }
+  ],
+  "vim.surround": true,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindings": [
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "toggle",
+  "window.zoomLevel": 2,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "Kanagawa Dragon",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.showTabs": "none",
+  "workbench.enableExperiments": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.list.openMode": "doubleClick",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none"
+}
