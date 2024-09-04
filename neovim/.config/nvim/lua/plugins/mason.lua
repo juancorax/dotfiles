@@ -29,6 +29,7 @@ return {
         "black",
         "eslint_d",
         "isort",
+        "prettier",
         "prettierd",
         "pylint",
         "rubocop",
