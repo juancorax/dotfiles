@@ -27,6 +27,7 @@
   "editor.stickyScroll.enabled": false,
   "editor.tabSize": 4,
   "editor.wordWrap": "off",
+  "errorLens.messageBackgroundMode": "none",
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
   },
