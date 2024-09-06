@@ -17,6 +17,7 @@ return {
         "cssls",
         "emmet_ls",
         "html",
+        "intelephense",
         "lua_ls",
         "pyright",
         "solargraph",
