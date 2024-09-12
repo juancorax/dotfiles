@@ -40,7 +40,7 @@ plug "zsh-users/zsh-syntax-highlighting"
 bindkey '^ ' autosuggest-accept
 
 # path
-export PATH="$HOME/.fzf/bin:$HOME/.local/bin:$HOME/.local/share/fnm:$HOME/.pyenv/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.fzf/bin:$HOME/.local/bin:$HOME/.local/share/fnm:$HOME/.pyenv/bin:$HOME/.rbenv/bin:$HOME/.sdkman:$PATH"
 source <(fzf --zsh)
 eval "$(fnm env --shell zsh)"
 eval "$(pyenv init - zsh)"
@@ -66,3 +66,6 @@ _fzf_compgen_dir() {
 
 # prompt
 PS1=$'\n%F{#0087ff}%~%f\n%F{#00ffff}$%f '
+
+# sdkman
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
