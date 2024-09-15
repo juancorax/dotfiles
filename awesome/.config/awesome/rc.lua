@@ -222,7 +222,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
       s.mytasklist, -- Middle widget
       { -- Right widgets
         layout = wibox.layout.fixed.horizontal,
-        mykeyboardlayout,
+        -- mykeyboardlayout,
         wibox.widget.systray(),
         mytextclock,
         s.mylayoutbox,
