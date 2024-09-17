@@ -15,6 +15,7 @@
   "editor.guides.highlightActiveIndentation": false,
   "editor.guides.indentation": false,
   "editor.hideCursorInOverviewRuler": true,
+  "editor.inlayHints.enabled": "off",
   "editor.lightbulb.enabled": "off",
   "editor.lineNumbers": "off",
   "editor.linkedEditing": true,
