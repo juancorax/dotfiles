@@ -20,8 +20,6 @@ opt.incsearch = true
 opt.list = true
 opt.listchars = { eol = "↵" }
 opt.mouse = ""
-opt.number = true
-opt.relativenumber = true
 opt.scrolloff = 10
 opt.shiftwidth = 2
 opt.showmode = false
