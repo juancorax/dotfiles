@@ -14,7 +14,7 @@
   "editor.guides.bracketPairsHorizontal": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.lightbulb.enabled": "off",
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "off",
   "editor.linkedEditing": true,
   "editor.matchBrackets": "never",
   "editor.minimap.enabled": false,
