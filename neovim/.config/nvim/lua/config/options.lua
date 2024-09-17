@@ -17,8 +17,6 @@ opt.expandtab = true
 opt.hlsearch = false
 opt.ignorecase = true
 opt.incsearch = true
-opt.list = true
-opt.listchars = { eol = "↵" }
 opt.mouse = ""
 opt.scrolloff = 10
 opt.shiftwidth = 2
