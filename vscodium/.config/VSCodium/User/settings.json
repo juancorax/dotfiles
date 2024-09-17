@@ -12,6 +12,8 @@
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": false,
   "editor.guides.bracketPairsHorizontal": false,
+  "editor.guides.highlightActiveIndentation": false,
+  "editor.guides.indentation": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.lightbulb.enabled": "off",
   "editor.lineNumbers": "off",
