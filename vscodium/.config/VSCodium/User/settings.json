@@ -164,7 +164,14 @@
     "editorOverviewRuler.warningForeground": "#0000",
     "editorOverviewRuler.wordHighlightForeground": "#0000",
     "editorOverviewRuler.wordHighlightStrongForeground": "#0000",
-    "editorOverviewRuler.wordHighlightTextForeground": "#0000"
+    "editorOverviewRuler.wordHighlightTextForeground": "#0000",
+    "editorStickyScroll.shadow": "#0000",
+    "inlineChat.shadow": "#0000",
+    "listFilterWidget.shadow": "#0000",
+    "panelStickyScroll.shadow": "#0000",
+    "scrollbar.shadow": "#0000",
+    "sideBarStickyScroll.shadow": "#0000",
+    "widget.shadow": "#0000"
   },
   "workbench.colorTheme": "Kanagawa Dragon",
   "workbench.editor.enablePreview": false,
