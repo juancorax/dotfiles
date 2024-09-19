@@ -149,6 +149,7 @@
   "window.zoomLevel": 2,
   "workbench.activityBar.location": "hidden",
   "workbench.colorCustomizations": {
+    "editorGroupHeader.border": "#0d0c0c",
     "editorOverviewRuler.addedForeground": "#0000",
     "editorOverviewRuler.background": "#0000",
     "editorOverviewRuler.border": "#0000",
