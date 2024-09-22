@@ -45,7 +45,7 @@
   "terminal.integrated.fontFamily": "ComicCodeLigatures Nerd Font, Noto Sans CJK JP",
   "update.mode": "none",
   "update.showReleaseNotes": false,
-  "vim.hlsearch": true,
+  "vim.hlsearch": false,
   "vim.incsearch": false,
   "vim.insertModeKeyBindings": [
     {
