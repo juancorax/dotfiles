@@ -9,9 +9,9 @@ return {
         section_separators = "",
       },
       sections = {
+        lualine_c = { { "filename", path = 1 } },
         lualine_x = {},
         lualine_y = {},
-        lualine_z = { "location" },
       },
     })
   end,
