@@ -13,6 +13,9 @@ return {
         lualine_x = {},
         lualine_y = {},
       },
+      inactive_sections = {
+        lualine_c = { { "filename", path = 1 } },
+      },
     })
   end,
 }
