@@ -59,6 +59,19 @@ return {
           capabilities = capabilities,
         })
       end,
+      ["emmet_ls"] = function()
+        lspconfig["emmet_ls"].setup({
+          capabilities = capabilities,
+          filetypes = {
+            "css",
+            "eruby",
+            "html",
+            "javascriptreact",
+            "php",
+            "typescriptreact",
+          },
+        })
+      end,
       ["solargraph"] = function()
         lspconfig["solargraph"].setup({
           capabilities = capabilities,
