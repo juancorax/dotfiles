@@ -225,7 +225,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         -- mykeyboardlayout,
         wibox.widget.systray(),
         mytextclock,
-        s.mylayoutbox,
+        -- s.mylayoutbox,
       },
     },
   })
