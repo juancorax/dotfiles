@@ -30,6 +30,7 @@ return {
         "black",
         "eslint_d",
         "isort",
+        "pint",
         "prettier",
         "prettierd",
         "pylint",
