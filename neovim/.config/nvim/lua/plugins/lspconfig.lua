@@ -63,11 +63,11 @@ return {
         lspconfig["emmet_ls"].setup({
           capabilities = capabilities,
           filetypes = {
+            "blade",
             "css",
             "eruby",
             "html",
             "javascriptreact",
-            "php",
             "typescriptreact",
           },
         })
