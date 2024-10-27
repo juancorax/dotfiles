@@ -20,9 +20,8 @@ return {
         yaml = { "prettierd", "prettier", stop_after_first = true },
       },
       format_on_save = {
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 1000,
+        lsp_format = "fallback",
+        timeout_ms = 2000,
       },
     })
   end,
