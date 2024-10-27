@@ -28,6 +28,7 @@ return {
     mason_tool_installer.setup({
       ensure_installed = {
         "black",
+        "blade-formatter",
         "eslint_d",
         "isort",
         "pint",

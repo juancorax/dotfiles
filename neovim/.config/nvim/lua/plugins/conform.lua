@@ -6,6 +6,7 @@ return {
 
     conform.setup({
       formatters_by_ft = {
+        blade = { "blade-formatter" },
         css = { "prettierd", "prettier", stop_after_first = true },
         html = { "prettierd", "prettier", stop_after_first = true },
         javascript = { "prettierd", "prettier", stop_after_first = true },
