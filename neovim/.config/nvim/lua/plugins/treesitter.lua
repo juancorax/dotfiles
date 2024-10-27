@@ -9,6 +9,7 @@ return {
         "blade",
         "c",
         "css",
+        "embedded_template",
         "html",
         "javascript",
         "json",
