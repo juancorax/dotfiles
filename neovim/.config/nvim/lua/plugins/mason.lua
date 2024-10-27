@@ -29,6 +29,7 @@ return {
       ensure_installed = {
         "black",
         "blade-formatter",
+        "erb-formatter",
         "eslint_d",
         "isort",
         "pint",
