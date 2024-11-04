@@ -18,6 +18,7 @@ return {
         "markdown",
         "markdown_inline",
         "php",
+        "php_only",
         "phpdoc",
         "query",
         "regex",
@@ -42,11 +43,5 @@ return {
       },
       filetype = "blade",
     }
-
-    vim.filetype.add({
-      pattern = {
-        [".*%.blade%.php"] = "blade",
-      },
-    })
   end,
 }
