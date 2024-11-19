@@ -21,7 +21,7 @@ return {
         "phpactor",
         "pyright",
         "ruby_lsp",
-        "tsserver",
+        "ts_ls",
       },
     })
 
