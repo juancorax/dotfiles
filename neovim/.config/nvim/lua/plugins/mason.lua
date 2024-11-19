@@ -20,7 +20,7 @@ return {
         "lua_ls",
         "phpactor",
         "pyright",
-        "solargraph",
+        "ruby_lsp",
         "tsserver",
       },
     })
@@ -36,7 +36,6 @@ return {
         "prettier",
         "prettierd",
         "pylint",
-        "rubocop",
         "shellcheck",
         "shfmt",
         "stylua",

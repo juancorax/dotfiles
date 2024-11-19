@@ -72,17 +72,6 @@ return {
           },
         })
       end,
-      ["solargraph"] = function()
-        lspconfig["solargraph"].setup({
-          capabilities = capabilities,
-          settings = {
-            solargraph = {
-              diagnostics = false,
-            },
-          },
-          init_options = { formatting = false },
-        })
-      end,
     })
   end,
 }
