@@ -52,6 +52,7 @@ return {
     })
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
+    local util = require("lspconfig.util")
 
     mason_lspconfig.setup_handlers({
       function(server_name)
@@ -70,6 +71,27 @@ return {
             "javascriptreact",
             "typescriptreact",
           },
+        })
+      end,
+      ["tailwindcss"] = function()
+        lspconfig["tailwindcss"].setup({
+          capabilities = capabilities,
+          root_dir = function(fname)
+            return util.root_pattern(
+              "tailwind.config.js",
+              "tailwind.config.cjs",
+              "tailwind.config.mjs",
+              "tailwind.config.ts",
+              "postcss.config.js",
+              "postcss.config.cjs",
+              "postcss.config.mjs",
+              "postcss.config.ts",
+              "config/tailwind.config.js",
+              "config/postcss.config.js"
+            )(fname) or util.find_package_json_ancestor(fname) or util.find_node_modules_ancestor(fname) or util.find_git_ancestor(
+              fname
+            )
+          end,
         })
       end,
     })

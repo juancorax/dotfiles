@@ -21,6 +21,7 @@ return {
         "phpactor",
         "pyright",
         "ruby_lsp",
+        "tailwindcss",
         "ts_ls",
       },
     })
