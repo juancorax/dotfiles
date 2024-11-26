@@ -76,6 +76,18 @@ return {
       ["tailwindcss"] = function()
         lspconfig["tailwindcss"].setup({
           capabilities = capabilities,
+          settings = {
+            tailwindCSS = {
+              classAttributes = {
+                "class",
+                "className",
+                "class:list",
+                "classList",
+                "ngClass",
+                "data-.*-class",
+              },
+            },
+          },
           root_dir = function(fname)
             return util.root_pattern(
               "tailwind.config.js",
