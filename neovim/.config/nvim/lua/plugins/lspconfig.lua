@@ -100,9 +100,7 @@ return {
               "postcss.config.ts",
               "config/tailwind.config.js",
               "config/postcss.config.js"
-            )(fname) or util.find_package_json_ancestor(fname) or util.find_node_modules_ancestor(fname) or util.find_git_ancestor(
-              fname
-            )
+            )(fname)
           end,
         })
       end,
