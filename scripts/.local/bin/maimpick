@@ -129,10 +129,7 @@ ask_size_quality() {
   {
     tac "$selections_cache" || true
     cat <<-EOF
-			0x250@0
-			0x250@1
-			0x250@5
-			0x350@5
+			0x250@100
 			0x0@100
 		EOF
   } | sort -u | head -10 | rofi -dmenu -i -p "Size and quality"
