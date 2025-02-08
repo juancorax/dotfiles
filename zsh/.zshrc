@@ -37,8 +37,7 @@ plug "zsh-users/zsh-syntax-highlighting"
 bindkey '^ ' autosuggest-accept
 
 # path
-export PATH="$HOME/.fzf/bin:$HOME/.local/bin:$PATH"
-. "$HOME/.asdf/asdf.sh"
+export PATH="$HOME/.asdf/shims:$HOME/.fzf/bin:$HOME/.local/bin:$PATH"
 source <(fzf --zsh)
 
 # fzf config
