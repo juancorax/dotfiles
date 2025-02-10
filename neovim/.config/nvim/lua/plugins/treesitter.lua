@@ -11,6 +11,7 @@ return {
         "css",
         "embedded_template",
         "html",
+        "http",
         "javascript",
         "json",
         "lua",
