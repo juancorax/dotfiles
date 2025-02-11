@@ -9,6 +9,7 @@ return {
         blade = { "blade-formatter" },
         css = { "prettierd", "prettier", stop_after_first = true },
         eruby = { "erb_format" },
+        go = { "gofmt" },
         html = { "prettierd", "prettier", stop_after_first = true },
         javascript = { "prettierd", "prettier", stop_after_first = true },
         javascriptreact = { "prettierd", "prettier", stop_after_first = true },
