@@ -6,7 +6,6 @@ return {
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
         "bash",
-        "blade",
         "c",
         "css",
         "embedded_template",
