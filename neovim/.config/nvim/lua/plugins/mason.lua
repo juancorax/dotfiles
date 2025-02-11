@@ -19,7 +19,6 @@ return {
         "html",
         "lua_ls",
         "phpactor",
-        "pyright",
         "ruby_lsp",
         "tailwindcss",
         "ts_ls",
@@ -28,15 +27,12 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "black",
         "blade-formatter",
         "erb-formatter",
         "eslint_d",
-        "isort",
         "pint",
         "prettier",
         "prettierd",
-        "pylint",
         "shellcheck",
         "shfmt",
         "stylua",

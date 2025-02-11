@@ -16,7 +16,6 @@ return {
         lua = { "stylua" },
         markdown = { "prettierd", "prettier", stop_after_first = true },
         php = { "pint" },
-        python = { "isort", "black" },
         typescript = { "prettierd", "prettier", stop_after_first = true },
         typescriptreact = { "prettierd", "prettier", stop_after_first = true },
         yaml = { "prettierd", "prettier", stop_after_first = true },
