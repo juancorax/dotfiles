@@ -2,7 +2,7 @@
   "[json][jsonc][markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "breadcrumbs.enabled": true,
+  "breadcrumbs.enabled": false,
   "breadcrumbs.filePath": "off",
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
