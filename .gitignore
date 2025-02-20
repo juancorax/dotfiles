@@ -1,0 +1,2 @@
+vscodium/.config/VSCodium/*
+!vscodium/.config/VSCodium/User/{keybindings.json,settings.json}
