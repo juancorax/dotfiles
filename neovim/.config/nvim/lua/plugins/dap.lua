@@ -16,6 +16,7 @@ return {
       require("mason-nvim-dap").setup({
         ensure_installed = {
           "delve",
+          "php",
         },
       })
 
@@ -24,6 +25,20 @@ return {
           enabled = false,
         },
       })
+
+      dap.adapters.php = {
+        type = "executable",
+        command = "php-debug-adapter",
+      }
+
+      dap.configurations.php = {
+        {
+          type = "php",
+          request = "launch",
+          name = "Listen for Xdebug",
+          port = 9003,
+        },
+      }
 
       keymap("n", "<leader>b", dap.toggle_breakpoint)
       keymap("n", "<leader>B", function()
