@@ -33,7 +33,6 @@ return {
         "eslint_d",
         "golangci-lint",
         "pint",
-        "prettier",
         "prettierd",
         "shellcheck",
         "shfmt",
