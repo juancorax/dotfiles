@@ -26,7 +26,6 @@ return {
         "phpdoc",
         "query",
         "regex",
-        "ruby",
         "sql",
         "typescript",
         "vim",

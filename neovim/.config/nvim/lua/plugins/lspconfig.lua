@@ -52,7 +52,6 @@ return {
     })
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
-    local util = require("lspconfig.util")
 
     mason_lspconfig.setup_handlers({
       function(server_name)
@@ -66,42 +65,10 @@ return {
           filetypes = {
             "blade",
             "css",
-            "eruby",
             "html",
             "javascriptreact",
             "typescriptreact",
           },
-        })
-      end,
-      ["tailwindcss"] = function()
-        lspconfig["tailwindcss"].setup({
-          capabilities = capabilities,
-          settings = {
-            tailwindCSS = {
-              classAttributes = {
-                "class",
-                "className",
-                "class:list",
-                "classList",
-                "ngClass",
-                "data-.*-class",
-              },
-            },
-          },
-          root_dir = function(fname)
-            return util.root_pattern(
-              "tailwind.config.js",
-              "tailwind.config.cjs",
-              "tailwind.config.mjs",
-              "tailwind.config.ts",
-              "postcss.config.js",
-              "postcss.config.cjs",
-              "postcss.config.mjs",
-              "postcss.config.ts",
-              "config/tailwind.config.js",
-              "config/postcss.config.js"
-            )(fname)
-          end,
         })
       end,
     })

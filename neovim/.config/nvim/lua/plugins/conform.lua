@@ -8,7 +8,6 @@ return {
       formatters_by_ft = {
         blade = { "blade-formatter" },
         css = { "prettierd" },
-        eruby = { "erb_format" },
         go = { "gofmt" },
         html = { "prettierd" },
         javascript = { "prettierd" },
