@@ -24,8 +24,8 @@ set notification-warning-bg "#0d0c0c"
 set notification-warning-fg "#c5c9c5"
 set page-padding 0
 set recolor true
-set recolor-darkcolor "#c5c9c5"
-set recolor-lightcolor "#181616"
+set recolor-darkcolor "#181616"
+set recolor-lightcolor "#c5c9c5"
 set sandbox "none"
 set selection-clipboard "clipboard"
 set statusbar-bg "#0d0c0c"
