@@ -17,8 +17,6 @@ keymap("n", "J", "mzJ`z", { desc = "join lines and keep the cursor in the same p
 keymap("n", "N", "Nzzzv", { desc = "move to the previous search result and center the cursor" })
 keymap("n", "n", "nzzzv", { desc = "move to the next search result and center the cursor" })
 keymap("v", "<", "<gv", { desc = "indent out the selected lines" })
-keymap("v", "<leader>+", "g<C-a>", { desc = "increment number" })
-keymap("v", "<leader>-", "g<C-x>", { desc = "decrement number" })
 keymap("v", "<leader>p", '"_dp', { desc = "paste over currently selected text without yanking it" })
 keymap("v", ">", ">gv", { desc = "indent in the selected lines" })
 keymap("v", "J", ":m '>+1<CR>gv=gv", { desc = "move down the selected lines" })
