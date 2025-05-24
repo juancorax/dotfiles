@@ -495,6 +495,7 @@ ruled.client.connect_signal("request::rules", function()
       class = {
         "Arandr",
         "Blueman-manager",
+        "Galculator",
         "Gpick",
         "Kruler",
         "Sxiv",
