@@ -16,6 +16,7 @@ return {
         lua = { "stylua" },
         markdown = { "prettierd" },
         php = { "pint" },
+        twig = { "djlint" },
         typescript = { "prettierd" },
         typescriptreact = { "prettierd" },
         yaml = { "prettierd" },

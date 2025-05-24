@@ -67,6 +67,7 @@ return {
             "css",
             "html",
             "javascriptreact",
+            "twig",
             "typescriptreact",
           },
         })

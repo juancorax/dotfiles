@@ -27,6 +27,7 @@ return {
         "query",
         "regex",
         "sql",
+        "twig",
         "typescript",
         "vim",
         "vimdoc",

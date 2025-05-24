@@ -28,6 +28,7 @@ return {
     mason_tool_installer.setup({
       ensure_installed = {
         "blade-formatter",
+        "djlint",
         "eslint_d",
         "golangci-lint",
         "pint",
