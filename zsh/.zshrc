@@ -1,6 +1,3 @@
-# zap
-[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
-
 # history
 export HISTSIZE=1000
 export SAVEHIST=500
@@ -16,6 +13,14 @@ setopt share_history
 export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
 
+# path
+path=(
+  "$HOME/.asdf/shims"
+  "$HOME/.fzf/bin"
+  $path
+)
+export PATH
+
 # aliases
 alias ls='exa -al --color=always --group-directories-first'
 alias grep='grep --color=auto'
@@ -26,21 +31,27 @@ alias cat='bat'
 alias vi='nvim'
 alias vim='nvim'
 
-# plugins
-plug "zsh-users/zsh-autosuggestions"
-export VI_MODE_ESC_INSERT="kj" && plug "zap-zsh/vim"
-plug "zsh-users/zsh-syntax-highlighting"
+# vi mode
+bindkey -v
+export KEYTIMEOUT=25
+bindkey -M viins "kj" vi-cmd-mode
+bindkey -v '^?' backward-delete-char
 
-# keybinds
+# autocompletion
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+
+# autosuggestions
+source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 bindkey '^ ' autosuggest-accept
-
-# path
-path=(
-  "$HOME/.asdf/shims"
-  "$HOME/.fzf/bin"
-  $path
-)
-export PATH
 
 # fzf key bindings & fuzzy completion
 source <(fzf --zsh)
@@ -65,3 +76,6 @@ _fzf_compgen_dir() {
 
 # prompt
 PS1=$'\n%F{#0087ff}%~%f\n%F{#00ffff}$%f '
+
+# syntax highlighting
+source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
