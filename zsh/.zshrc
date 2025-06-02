@@ -35,7 +35,14 @@ plug "zsh-users/zsh-syntax-highlighting"
 bindkey '^ ' autosuggest-accept
 
 # path
-export PATH="$HOME/.asdf/shims:$HOME/.fzf/bin:$PATH"
+path=(
+  "$HOME/.asdf/shims"
+  "$HOME/.fzf/bin"
+  $path
+)
+export PATH
+
+# fzf key bindings & fuzzy completion
 source <(fzf --zsh)
 
 # fzf config
