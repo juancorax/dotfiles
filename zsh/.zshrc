@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # zap
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
@@ -37,7 +35,7 @@ plug "zsh-users/zsh-syntax-highlighting"
 bindkey '^ ' autosuggest-accept
 
 # path
-export PATH="$HOME/.asdf/shims:$HOME/.fzf/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.asdf/shims:$HOME/.fzf/bin:$PATH"
 source <(fzf --zsh)
 
 # fzf config
