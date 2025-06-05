@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+LAYOUT_SCRIPTS_DIR="$HOME/.screenlayout"
+
+notify() {
+  echo "$*"
+  notify-send "Screen Layout" "$*" &
+}
+
+if [ ! -d "$LAYOUT_SCRIPTS_DIR" ]; then
+  notify "Directory '$LAYOUT_SCRIPTS_DIR' does not exist."
+  exit 1
+fi
+
+layouts=$(for layout_script in "$LAYOUT_SCRIPTS_DIR"/*.sh; do
+  [ -f "$layout_script" ] && basename -s ".sh" "$layout_script"
+done)
+
+if [ -z "$layouts" ]; then
+  notify "No layouts found."
+  exit 1
+fi
+
+selected_layout=$(echo "$layouts" | rofi -dmenu -i -p "Screen Layout")
+
+if [ -n "$selected_layout" ]; then
+  "$LAYOUT_SCRIPTS_DIR/$selected_layout.sh"
+  notify "'$selected_layout' layout selected."
+else
+  notify "No layout selected."
+fi
