@@ -11,7 +11,7 @@ configuration {
   background-color: #0d0c0c;
   border-color: White;
   text-color: White;
-  font: "ComicCodeLigatures Nerd Font 10";
+  font: "monospace 10";
 }
 
 window, listview {

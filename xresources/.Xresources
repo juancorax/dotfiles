@@ -9,7 +9,7 @@ Xft.rgba: rgb
 
 ! nsxiv
 Nsxiv.bar.background: #181616
-Nsxiv.bar.font: ComicCodeLigatures Nerd Font:style=Regular:size=15
+Nsxiv.bar.font: monospace:style=Regular:size=15
 Nsxiv.bar.foreground: #c5c9c5
 Nsxiv.mark.foreground: #c5c9c5
 Nsxiv.window.background: #181616

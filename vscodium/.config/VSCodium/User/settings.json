@@ -8,7 +8,7 @@
   "editor.cursorSmoothCaretAnimation": "off",
   "editor.cursorSurroundingLines": 8,
   "editor.folding": false,
-  "editor.fontFamily": "ComicCodeLigatures Nerd Font, Noto Sans CJK JP",
+  "editor.fontFamily": "monospace, Noto Sans CJK JP",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": false,
