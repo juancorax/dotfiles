@@ -13,10 +13,7 @@ ask_command() {
   rofi -dmenu -l 30 -i -p 'Screenshot which area?' <<-EOF
 		selected area
 		selected area → clipboard
-		selected area → gimp
 		selected area → Anki
-		selected area → Tesseract OCR
-		selected area → Transformers OCR
 		current window
 		current window → clipboard
 		full screen
@@ -163,11 +160,6 @@ main() {
     take_screenshot -s | xclip_png
     notify "Area copied to the clipboard."
     ;;
-  *area*gimp)
-    take_screenshot -s "$file_path"
-    flatpak run org.gimp.GIMP "$file_path"
-    cleanup_after "60s" "$file_path"
-    ;;
   *area*Anki)
     local -r target_note=$(anki_last_added_note)
     if [[ -z $target_note ]]; then
@@ -191,20 +183,6 @@ main() {
     notify "Added. File size: $(("$(stat --format='%s' "$webp_path")" / 1024)) KiB"
     cleanup_after "3s" "$file_path"
     cleanup_after "3s" "$webp_path"
-    ;;
-  *area*Tesseract*)
-    if which maimocr; then
-      exec maimocr
-    else
-      notify "Can't find maimocr."
-    fi
-    ;;
-  *area*Transformers*)
-    if which transformers_ocr; then
-      exec transformers_ocr recognize
-    else
-      notify "Can't find transformers-ocr."
-    fi
     ;;
   *area)
     take_screenshot -s "$file_path"
