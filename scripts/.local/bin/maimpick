@@ -3,7 +3,6 @@
 set -euo pipefail
 
 readonly anki_image_field=${MAIMPICK_ANKI_FIELD:-Picture}
-readonly selections_cache=$HOME/.cache/previous_selections
 
 take_screenshot() {
   maim --hidecursor --format=png --quality 10 "$@"
@@ -14,10 +13,6 @@ ask_command() {
 		selected area
 		selected area → clipboard
 		selected area → Anki
-		current window
-		current window → clipboard
-		full screen
-		full screen → clipboard
 	EOF
 }
 
@@ -116,29 +111,42 @@ anki_note_content() {
     grep -Po "\"$field\":\s*{\"value\":\s*\"\K.*?(?=\",)"
 }
 
-_cwebp() { cwebp -blend_alpha '0xffffff' -alpha_q 0 -short -sharp_yuv -af -pass 10 -m 6 -mt -sns 100 -f 100 "$@"; }
-
-_cut() {
-  awk -F 'x|@' "-vfield=$1" '{print $field }' <<<"${2:?No string specified.}"
-}
-
-ask_size_quality() {
-  {
-    tac "$selections_cache" || true
-    cat <<-EOF
-			0x250@100
-			0x0@100
-		EOF
-  } | sort -u | head -10 | rofi -dmenu -i -p "Size and quality"
-}
-
 convert_image() {
-  # 1=source, 2=dest, 3={w}x{h}@{q}
-  _cwebp \
+  cwebp \
+    -blend_alpha '0xffffff' \
+    -alpha_q 0 \
+    -short \
+    -sharp_yuv \
+    -af \
+    -pass 10 \
+    -m 6 \
+    -mt \
+    -sns 100 \
+    -f 100 \
     -o "$2" \
-    -resize "$(_cut 1 "$3")" "$(_cut 2 "$3")" \
-    -q "$(_cut 3 "$3")" \
+    -resize 0 300 \
+    -q 70 \
     -- "$1"
+}
+
+handle_anki_screenshot() {
+  local -r target_note=$(anki_last_added_note)
+  if [[ -z $target_note ]]; then
+    notify "No selected note."
+    return
+  fi
+  take_screenshot -s "$file_path"
+  local -r webp_path=${file_path%.*}.webp
+  anki_select_note "0"
+  convert_image "$file_path" "$webp_path"
+  anki_store "$webp_path" "$(basename -- "$webp_path")"
+  local -r prev_content=$(anki_note_content "$target_note" "$anki_image_field")
+  local -r new_content="<img src=\\\"$(basename -- "$webp_path")\\\">"
+  anki_update_note "$target_note" "$anki_image_field" "${prev_content}${new_content}"
+  anki_select_note "$target_note" &
+  notify "Added. File size: $(("$(stat --format='%s' "$webp_path")" / 1024)) KiB"
+  cleanup_after "3s" "$file_path"
+  cleanup_after "3s" "$webp_path"
 }
 
 main() {
@@ -161,48 +169,11 @@ main() {
     notify "Area copied to the clipboard."
     ;;
   *area*Anki)
-    local -r target_note=$(anki_last_added_note)
-    if [[ -z $target_note ]]; then
-      notify "No selected note."
-      return
-    fi
-    take_screenshot -s "$file_path"
-    local -r size_quality=$(ask_size_quality) webp_path=${file_path%.*}.webp
-    if [[ -z $size_quality ]]; then
-      notify "Aborted."
-      return
-    fi
-    anki_select_note "0"
-    echo "$size_quality" >>"$selections_cache"
-    convert_image "$file_path" "$webp_path" "$size_quality"
-    anki_store "$webp_path" "$(basename -- "$webp_path")"
-    local -r prev_content=$(anki_note_content "$target_note" "$anki_image_field")
-    local -r new_content="<img src=\\\"$(basename -- "$webp_path")\\\">"
-    anki_update_note "$target_note" "$anki_image_field" "${prev_content}${new_content}"
-    anki_select_note "$target_note" &
-    notify "Added. File size: $(("$(stat --format='%s' "$webp_path")" / 1024)) KiB"
-    cleanup_after "3s" "$file_path"
-    cleanup_after "3s" "$webp_path"
+    handle_anki_screenshot
     ;;
   *area)
     take_screenshot -s "$file_path"
     notify "Area captured."
-    ;;
-  *window*clipboard)
-    take_screenshot -B -i "$(xdotool getactivewindow)" | xclip_png
-    notify "Area copied."
-    ;;
-  full*clipboard)
-    take_screenshot | xclip_png
-    notify "Window copied."
-    ;;
-  *window)
-    take_screenshot -B -i "$(xdotool getactivewindow)" "$file_path"
-    notify "Window captured."
-    ;;
-  full*)
-    take_screenshot "$file_path"
-    notify "Whole screen captured."
     ;;
   *)
     notify "No appropriate action."
