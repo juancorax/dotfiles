@@ -11,7 +11,7 @@ configuration {
   background-color: #0d0c0c;
   border-color: White;
   text-color: White;
-  font: "monospace 10";
+  font: "monospace 12";
 }
 
 window, listview {
@@ -31,7 +31,7 @@ horibox {
 }
 
 prompt, entry, element {
-  padding: 6px;
+  padding: 5px;
 }
 
 prompt {
