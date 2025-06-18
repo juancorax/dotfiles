@@ -15,7 +15,7 @@ local theme = {}
 theme.font = "monospace 12"
 
 theme.bg_normal = "#0d0c0c"
-theme.bg_focus = "#181616"
+theme.bg_focus = "#282727"
 theme.bg_urgent = "#E46876"
 theme.bg_minimize = "#0d0c0c"
 theme.bg_systray = theme.bg_normal
@@ -25,10 +25,10 @@ theme.fg_focus = "#ffffff"
 theme.fg_urgent = "#ffffff"
 theme.fg_minimize = "#c5c9c5"
 
-theme.useless_gap = dpi(0)
+theme.useless_gap = dpi(5)
 theme.border_width = dpi(2)
-theme.border_color_normal = "#181616"
-theme.border_color_active = "#0d0c0c"
+theme.border_color_normal = "#0d0c0c"
+theme.border_color_active = "#658594"
 theme.border_color_marked = "#E46876"
 
 theme.tasklist_disable_task_name = true

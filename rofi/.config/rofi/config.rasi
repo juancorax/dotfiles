@@ -35,7 +35,7 @@ prompt, entry, element {
 }
 
 prompt {
-  background-color: #181616;
+  background-color: #282727;
 }
 
 entry {
@@ -50,7 +50,7 @@ listview {
 }
 
 element selected {
-  background-color: #181616;
+  background-color: #282727;
 }
 
 element-text {
