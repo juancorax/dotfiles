@@ -1,0 +1,6 @@
+[tools]
+go = "latest"
+java = "lts"
+neovim = "0.10"
+node = "lts"
+php = "latest"
