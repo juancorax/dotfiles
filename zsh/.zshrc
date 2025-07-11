@@ -15,7 +15,6 @@ export MANPAGER="nvim +Man!"
 
 # path
 path=(
-  "$HOME/.asdf/shims"
   "$HOME/.fzf/bin"
   $path
 )
@@ -92,6 +91,9 @@ _fzf_compgen_dir() {
 
 # prompt
 PS1=$'\n%F{#0087ff}%~%f\n%F{#00ffff}$%f '
+
+# automatically load mise tools & environment variables
+eval "$(mise activate zsh)"
 
 # syntax highlighting
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
