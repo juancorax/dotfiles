@@ -1,7 +1,7 @@
 configuration {
   modi: "run,drun";
-  display-run: "run:";
-  display-drun: "drun:";
+  display-run: "Command:";
+  display-drun: "App:";
   drun-display-format: "{name}";
 }
 
