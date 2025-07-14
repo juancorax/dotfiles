@@ -3,12 +3,11 @@
 LAYOUT_SCRIPTS_DIR="$HOME/.screenlayout"
 
 notify() {
-  echo "$*"
-  notify-send "Screen Layout" "$*" &
+  notify-send "$(basename "$0")" "$*" &
 }
 
 if [ ! -d "$LAYOUT_SCRIPTS_DIR" ]; then
-  notify "Directory '$LAYOUT_SCRIPTS_DIR' does not exist."
+  notify "'$LAYOUT_SCRIPTS_DIR' directory does not exist."
   exit 1
 fi
 
@@ -21,11 +20,17 @@ if [ -z "$layouts" ]; then
   exit 1
 fi
 
-selected_layout=$(echo "$layouts" | rofi -dmenu -i -p "Screen Layout")
+selected_layout=$(echo "$layouts" | rofi -dmenu -i -p "Screen layout:")
 
 if [ -n "$selected_layout" ]; then
-  "$LAYOUT_SCRIPTS_DIR/$selected_layout.sh"
-  notify "'$selected_layout' layout selected."
+  if [ -f "$LAYOUT_SCRIPTS_DIR/$selected_layout.sh" ]; then
+    "$LAYOUT_SCRIPTS_DIR/$selected_layout.sh"
+    notify "'$selected_layout' layout applied."
+  else
+    notify "'$selected_layout' layout does not exist."
+    exit 1
+  fi
 else
   notify "No layout selected."
+  exit 1
 fi
