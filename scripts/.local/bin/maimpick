@@ -2,29 +2,31 @@
 
 set -euo pipefail
 
-readonly anki_image_field=${MAIMPICK_ANKI_FIELD:-Picture}
+readonly anki_image_field=Picture
 
 take_screenshot() {
-  maim --hidecursor --format=png --quality 10 "$@"
+  if ! maim --format=png --hidecursor --quality 10 --select --nodecorations=2 "$@" 2>/dev/null; then
+    notify "Screenshot canceled."
+    return 1
+  fi
 }
 
-ask_command() {
-  rofi -dmenu -l 30 -i -p 'Screenshot which area?' <<-EOF
-		selected area
-		selected area → clipboard
-		selected area → Anki
+prompt_screenshot_action() {
+  rofi -dmenu -l 3 -i -p 'Screenshot:' <<-EOF
+		Selection
+		Selection → Clipboard
+		Selection → Anki
 	EOF
 }
 
 notify() {
-  echo "$*"
-  notify-send "Maim Pick" "$*" &
+  notify-send "$(basename "$0")" "$*" &
 }
 
 if_installed() {
   for x in "$@"; do
     if ! which "$x" >/dev/null 2>&1 && ! dpkg -s "$x" >/dev/null 2>&1; then
-      notify "$x must be installed for this function."
+      notify "$x must be installed."
       return 1
     fi
   done
@@ -60,6 +62,7 @@ anki_select_note() {
 			"query": "nid:<QUERY>"
 		}
 	}'
+
   ankiconnect_request "${request/<QUERY>/$1}"
 }
 
@@ -73,8 +76,10 @@ anki_store() {
 			"path": "<PATH>"
 		}
 	}'
+
   request=${request//<NAME>/$name}
   request=${request//<PATH>/$path}
+
   ankiconnect_request "$request"
 }
 
@@ -92,9 +97,11 @@ anki_update_note() {
 			}
 		}
 	}'
+
   request=${request//<NOTE_ID>/$note_id}
   request=${request//<FIELD>/$field}
   request=${request//<NEW_CONTENT>/$new_content}
+
   ankiconnect_request "$request"
 }
 
@@ -107,6 +114,7 @@ anki_note_content() {
 			"notes": [<NOTE_ID>]
 		}
 	}'
+
   ankiconnect_request "${request/<NOTE_ID>/$note_id}" |
     grep -Po "\"$field\":\s*{\"value\":\s*\"\K.*?(?=\",)"
 }
@@ -135,46 +143,57 @@ handle_anki_screenshot() {
     notify "No selected note."
     return
   fi
-  take_screenshot -s "$file_path"
+
+  take_screenshot "$file_path"
+
   local -r webp_path=${file_path%.*}.webp
-  anki_select_note "0"
   convert_image "$file_path" "$webp_path"
+
+  anki_select_note "0"
   anki_store "$webp_path" "$(basename -- "$webp_path")"
+
   local -r prev_content=$(anki_note_content "$target_note" "$anki_image_field")
   local -r new_content="<img src=\\\"$(basename -- "$webp_path")\\\">"
+
   anki_update_note "$target_note" "$anki_image_field" "${prev_content}${new_content}"
   anki_select_note "$target_note" &
+
   notify "Added. File size: $(("$(stat --format='%s' "$webp_path")" / 1024)) KiB"
+
   cleanup_after "3s" "$file_path"
   cleanup_after "3s" "$webp_path"
 }
 
 main() {
-  if_installed maim rofi webp xclip xdotool || exit 1
+  if_installed maim rofi webp xclip || exit 1
 
-  local -r screenshot_dir=${MAIM_SCREENSHOTS:-$HOME/Pictures/Screenshots}
-  local -r file_path=$screenshot_dir/screenshot-$(date --utc '+%F-%H-%M-%S').png
+  local -r screenshot_dir="$HOME/Pictures/Screenshots"
+  local -r file_path="$screenshot_dir/screenshot-$(date --utc '+%F-%H-%M-%S').png"
 
   mkdir -p -- "$screenshot_dir"
 
-  if (($# == 0)) || [[ -z $1 ]]; then
-    local -r command=$(ask_command)
-  else
-    local -r command=$1
-  fi
+  local -r screenshot_action=$(prompt_screenshot_action)
 
-  case $command in
-  *area*clipboard)
-    take_screenshot -s | xclip_png
-    notify "Area copied to the clipboard."
+  case "$screenshot_action" in
+  "Selection")
+    take_screenshot "$file_path"
+    notify "Selection captured."
     ;;
-  *area*Anki)
+
+  "Selection → Clipboard")
+    take_screenshot | xclip_png
+    notify "Selection copied to clipboard."
+    ;;
+
+  "Selection → Anki")
     handle_anki_screenshot
     ;;
-  *area)
-    take_screenshot -s "$file_path"
-    notify "Area captured."
+
+  "")
+    notify "Screenshot canceled."
+    exit 1
     ;;
+
   *)
     notify "No appropriate action."
     exit 1
@@ -182,4 +201,4 @@ main() {
   esac
 }
 
-main "$@"
+main
