@@ -10,12 +10,13 @@ setopt inc_append_history
 setopt share_history
 
 # default apps
-export EDITOR="nvim"
-export MANPAGER="nvim +Man!"
+export EDITOR="$(mise which nvim)"
+export MANPAGER="$EDITOR +Man!"
 
 # path
 path=(
   "$HOME/.fzf/bin"
+  "$HOME/.local/share/mise/shims"
   $path
 )
 export PATH
@@ -23,9 +24,6 @@ export PATH
 # aliases
 alias ls='exa -al --color=always --group-directories-first'
 alias grep='grep --color=auto'
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
 alias cat='bat'
 alias vi='nvim'
 alias vim='nvim'
@@ -91,9 +89,6 @@ _fzf_compgen_dir() {
 
 # prompt
 PS1=$'\n%F{#0087ff}%~%f\n%F{#00ffff}$%f '
-
-# automatically load mise tools & environment variables
-eval "$(mise activate zsh)"
 
 # syntax highlighting
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
