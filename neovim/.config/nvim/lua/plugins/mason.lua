@@ -19,7 +19,6 @@ return {
         "gopls",
         "html",
         "lua_ls",
-        "phpactor",
         "tailwindcss",
         "ts_ls",
       },
@@ -27,11 +26,8 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "blade-formatter",
-        "djlint",
         "eslint_d",
         "golangci-lint",
-        "pint",
         "prettierd",
         "shellcheck",
         "shfmt",

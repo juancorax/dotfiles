@@ -6,7 +6,6 @@ return {
 
     conform.setup({
       formatters_by_ft = {
-        blade = { "blade-formatter" },
         css = { "prettierd" },
         go = { "gofmt" },
         html = { "prettierd" },
@@ -15,8 +14,6 @@ return {
         json = { "prettierd" },
         lua = { "stylua" },
         markdown = { "prettierd" },
-        php = { "pint" },
-        twig = { "djlint" },
         typescript = { "prettierd" },
         typescriptreact = { "prettierd" },
         yaml = { "prettierd" },

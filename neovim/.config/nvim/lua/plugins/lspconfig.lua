@@ -59,19 +59,6 @@ return {
           capabilities = capabilities,
         })
       end,
-      ["emmet_ls"] = function()
-        lspconfig["emmet_ls"].setup({
-          capabilities = capabilities,
-          filetypes = {
-            "blade",
-            "css",
-            "html",
-            "javascriptreact",
-            "twig",
-            "typescriptreact",
-          },
-        })
-      end,
     })
   end,
 }
