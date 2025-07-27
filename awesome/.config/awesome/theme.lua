@@ -31,8 +31,6 @@ theme.border_color_normal = "#0d0c0c"
 theme.border_color_active = "#658594"
 theme.border_color_marked = "#E46876"
 
-theme.hotkeys_modifiers_fg = "#393836"
-
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -45,10 +43,15 @@ theme.hotkeys_modifiers_fg = "#393836"
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
 
+theme.hotkeys_modifiers_fg = "#393836"
+
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
+
+-- Disable the tasklist client icons
+theme.tasklist_disable_icon = true
 
 -- Variables set for theming notifications:
 -- notification_font
