@@ -1,5 +1,4 @@
 [tools]
-go = "latest"
 lua = "latest"
 neovim = "0.10"
 node = "lts"
