@@ -16,7 +16,6 @@ return {
         "bashls",
         "cssls",
         "emmet_ls",
-        "gopls",
         "html",
         "lua_ls",
         "tailwindcss",
@@ -27,7 +26,6 @@ return {
     mason_tool_installer.setup({
       ensure_installed = {
         "eslint_d",
-        "golangci-lint",
         "prettierd",
         "shellcheck",
         "shfmt",
