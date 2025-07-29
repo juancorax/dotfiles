@@ -14,6 +14,7 @@ return {
     mason_lspconfig.setup({
       ensure_installed = {
         "bashls",
+        "clangd",
         "cssls",
         "emmet_ls",
         "html",
