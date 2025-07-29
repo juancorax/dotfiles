@@ -18,7 +18,6 @@ return {
         "emmet_ls",
         "html",
         "lua_ls",
-        "tailwindcss",
         "ts_ls",
       },
     })
