@@ -1,6 +1,7 @@
 local keymap = vim.keymap.set
 
 keymap("i", "kj", "<Esc>", { desc = "exit insert mode with kj" })
+keymap("n", "-", "<Cmd>Explore<CR>", { desc = "explore directory of current file" })
 keymap("n", "<C-Left>", "<Cmd>vertical resize -1<CR>", { desc = "decrease current window width" })
 keymap("n", "<C-Right>", "<Cmd>vertical resize +1<CR>", { desc = "increase current window width" })
 keymap("n", "<C-S-Down>", "<Cmd>resize -1<CR>", { desc = "decrease current window height" })
