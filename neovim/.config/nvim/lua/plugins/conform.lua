@@ -9,12 +9,9 @@ return {
         css = { "prettierd" },
         html = { "prettierd" },
         javascript = { "prettierd" },
-        javascriptreact = { "prettierd" },
         json = { "prettierd" },
         lua = { "stylua" },
         markdown = { "prettierd" },
-        typescript = { "prettierd" },
-        typescriptreact = { "prettierd" },
         yaml = { "prettierd" },
       },
       format_on_save = {
