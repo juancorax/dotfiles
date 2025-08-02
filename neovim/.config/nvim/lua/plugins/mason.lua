@@ -25,7 +25,6 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
-        "eslint_d",
         "prettierd",
         "shellcheck",
         "shfmt",
