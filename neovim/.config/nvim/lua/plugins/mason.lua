@@ -19,6 +19,7 @@ return {
         "emmet_ls",
         "html",
         "lua_ls",
+        "pylsp",
         "ts_ls",
       },
     })
