@@ -9,6 +9,11 @@ local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
+local deficient = require("deficient")
+local battery_widget = deficient.battery_widget({
+  widget_text = " ${AC_BAT}${color_on}${percent}%${color_off}",
+  widget_font = "monospace 12",
+})
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -224,6 +229,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         layout = wibox.layout.fixed.horizontal,
         -- mykeyboardlayout,
         wibox.widget.systray(),
+        battery_widget,
         mytextclock,
         -- s.mylayoutbox,
       },
