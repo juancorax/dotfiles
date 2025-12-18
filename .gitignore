@@ -1,5 +1,5 @@
 cmus/.config/cmus/*
 !cmus/.config/cmus/rc
 
-vscodium/.config/VSCodium/*
-!vscodium/.config/VSCodium/User/{keybindings.json,settings.json}
+vscode/.config/Code/*
+!vscode/.config/Code/User/{keybindings.json,settings.json}
