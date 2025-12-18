@@ -3,6 +3,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "breadcrumbs.enabled": false,
+  "chat.disableAIFeatures": true,
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "off",
   "editor.cursorSurroundingLines": 8,
