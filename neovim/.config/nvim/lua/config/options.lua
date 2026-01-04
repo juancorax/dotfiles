@@ -1,17 +1,15 @@
 local g = vim.g
 local opt = vim.opt
+local cmd = vim.cmd
 
 g.mapleader = " "
 g.maplocalleader = " "
-opt.autoindent = true
-opt.background = "dark"
+
 opt.clipboard = "unnamedplus"
-opt.cmdheight = 1
 opt.cursorline = true
 opt.expandtab = true
 opt.hlsearch = false
 opt.ignorecase = true
-opt.incsearch = true
 opt.list = true
 opt.listchars = { tab = "  " }
 opt.mouse = ""
@@ -30,3 +28,5 @@ opt.termguicolors = true
 opt.undofile = true
 opt.updatetime = 1000
 opt.wrap = false
+
+cmd("colorscheme retrobox")
