@@ -1,5 +1,1 @@
 cmus/.config/cmus/*
-!cmus/.config/cmus/rc
-
-vscode/.config/Code/*
-!vscode/.config/Code/User/{keybindings.json,settings.json}
