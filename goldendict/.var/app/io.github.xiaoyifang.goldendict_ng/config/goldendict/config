@@ -182,6 +182,15 @@
    <dictionary name="日本語表現活用辞典">39f02cdc9782b6ffd6e45dab1702e8ad</dictionary>
    <mutedDictionaries/>
   </group>
+  <group id="3341709426" name="類義語">
+   <dictionary name="Japanese (JP) Morphology">c6d138205001ba9fd9a0b965e156d64c</dictionary>
+   <dictionary name="日本語発音アクセント新辞典">f13b5beefcd346f6baf02e9edd6a9e70</dictionary>
+   <dictionary name="Online Japanese Accent Dictionary [Version 2024]">a9a547769330f2b6f2cfd0376d5bbe15</dictionary>
+   <dictionary name="Weblio類語辞典">dd420dce051ccf380ddb7b41888a1a0b</dictionary>
+   <dictionary name="使い方の分かる類語例解辞典［新装版］">5ec5867fc4fe393d44f710debba41874</dictionary>
+   <dictionary name="類語玉手箱">4a21dd282b333203fbe148a27b71e706</dictionary>
+   <mutedDictionaries/>
+  </group>
   <group id="1779404461" name="文法">
    <dictionary name="Japanese (JP) Morphology">c6d138205001ba9fd9a0b965e156d64c</dictionary>
    <dictionary name="日本語発音アクセント新辞典">f13b5beefcd346f6baf02e9edd6a9e70</dictionary>
