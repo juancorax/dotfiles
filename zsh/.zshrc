@@ -10,13 +10,12 @@ setopt inc_append_history
 setopt share_history
 
 # default apps
-export EDITOR="$(mise which nvim)"
+export EDITOR="nvim"
 export MANPAGER="$EDITOR +Man!"
 
 # path
 path=(
   "$HOME/.fzf/bin"
-  "$HOME/.local/share/mise/shims"
   $path
 )
 export PATH
